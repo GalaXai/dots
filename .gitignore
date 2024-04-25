@@ -1,0 +1,3 @@
+.themes/*
+# But not .zip files within the .themes directory
+!.themes/*.zip
