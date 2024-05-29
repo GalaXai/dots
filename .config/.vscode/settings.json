@@ -1,0 +1,8 @@
+{
+    "files.autoGuessEncoding": true,
+    "editor.fontFamily": "0xProto Nerd Font Mono",
+    "terminal.integrated.enableImages": true,
+    "terminal.external.linuxExec": "kitty",
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontFamily": "JetBrains Mono",
+}

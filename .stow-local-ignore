@@ -1,4 +1,4 @@
 .git
-ubuntu_setup.sh
-.themes/*.zip
 .gitignore
+Arch_Installation.md
+README.md
