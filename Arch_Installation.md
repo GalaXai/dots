@@ -12,10 +12,16 @@ Profile
 	- OS Drivers (AMD)
 Audio -> pulseaudio
 Network -> Network Manager
-Additonal Packages -> git curl firefox tree code stow fastfetch waybar discord
+Additonal Packages -> git curl firefox tree code stow fastfetch waybar discord hyprpaper
 Optional Repo -> multi lib
 
+## Removing wofi
+swap wofi to rofi since cattppucin has theme for it
 
+# update pacman
+```bash
+sudo pacman -Syu
+```
 ## waybar
 pacman -S ttf-font-awesome <- missing icons
 
@@ -36,14 +42,14 @@ makepkg -si
 ```
 ## Screenshots
 paru -S hyprshot
-> + had to bind
+> I bind it to: mod + shift + S
 ```
-bind = $mainMod S, exec hyprshot -m region --clipboard--only
+bind = $shiftMod S, exec hyprshot -m region --clipboard--only
 ```
 
 ## Wallpaper
 
-paru -S hyprpaper
+will be using hyprpaper
 
 ```
 # Working file /hypr/hyprpaper.conf
@@ -66,7 +72,23 @@ Fonts -> sudp pacman -S ttf-0xproto-nerd
 also change the font in vscode to see icons
 
 
-lxappearance
+lxappearance not sure if it changes something?
 
 sudo pacman -S qt6ct < to fix doplhin
+<!-- sudo pacman -S kservice5 < fix more doplhin // this didn't help -->
+sudo pacman -S archlinux-xdg-menu < more fixes & run XDG_MENU_PREFIX=arch- kbuildsycoca6 
 env =  QT_QPA_PLATFORMTHEME,qt6ct
+
+## Audio
+We are using pulseaudio
+i saw `pavucontrol` in waybar config may use it as well.
+pacman -S pavucontrol
+
+
+## Image viewer
+
+sudo pacman -S gwenview
+
+
+## lock screen
+sudo pacman -S hyprlock

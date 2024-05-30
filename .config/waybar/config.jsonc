@@ -1,40 +1,40 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "layer": "top", // Waybar at top layer
     "height": 30, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
-    // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "hyprland/window",
         "clock"
     ],
     "modules-right": [
+        // "mpris",
         "pulseaudio",
         "cpu",
         "memory",
         // gpu
         "tray"
+        // "custom/lock",
+        // "custom/poweroff"
     ],
     // Modules configuration
     "hyprland/workspaces": {
-        "format": "<sub>{icon}</sub> {windows}",
+        "active-only": false,
+        "all-outputs": true,
+        "disable-scroll": false,
+        "format": "{icon} {windows}",
         "format-window-separator": " ",
-        "window-rewrite-default": "",
+        "window-rewrite-default": "",
         "window-rewrite": {
           "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
           "class<firefox>": "", // Windows whose classes are "firefox"
-          "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-          "~": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
+          "foot": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
+          "~": "",
           "title<.*discord.*>": "",
           "code": "󰨞",
-          "urgent": "",
-          "focused": "",
-          "default": ""
+          "active": ""
         }
     },
     "tray": {
@@ -42,46 +42,99 @@
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
+        "interval": 1,
+        "format": " {:%I:%M %p}", // AM PM format
+        "format-alt": " {:%H:%M   %Y, %d %B, %A}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+          "mode"          : "year",
+          "mode-mon-col"  : 3,
+          "weeks-pos"     : "right",
+          "on-scroll"     : 1,
+          "format": {
+          "months":     "<span color='#ffead3'><b>{}</b></span>",
+          "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+          "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+          "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+          "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+        }, 
     "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
+        "format": "{usage}% 󰍛",  
+        "interval": 1,
+        "format-alt-click": "click",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
     },
     "memory": {
-        "format": "{}% "
+        "interval": 10,
+        "format": "{used:0.1f}GB 󰾆",
+        "format-alt": "{percentage}% 󰾆",
+        "format-alt-click": "click",
+        "tooltip": true,
+        "tooltip-format": "{used:0.1f}GB/{total:0.1f}GB",
+        "on-click": "kitty --title htop sh -c 'htop'"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} 󰂰 {volume}%",
+        "format-muted": "󰖁",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+        "default": ["", "", "󰕾", ""], 
+        "ignored-sinks": ["Easy Effects Sink"]
         },
-        "on-click": "pavucontrol"
+        "scroll-step": 5.0,
+        // "on-click-right": "~/.config/hypr/scripts/volume_control.sh --toggle",
+        "on-click": "pavucontrol -t 3",
+        // "on-scroll-up": "~/.config/hypr/scripts/volume_control.sh --inc",
+        // "on-scroll-down": "~/.config/hypr/scripts/volume_control.sh --dec",
+        "tooltip-format": "{icon} {desc} | {volume}%",
+        "smooth-scrolling-threshold": 1
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
+    "mpris": {
+        "interval": 10,
+        "format": "{player_icon} ",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "on-click-middle": "playerctl play-pause",
+        "on-click": "playerctl previous",
+        "on-click-right": "playerctl next",
+        "scroll-step": 5.0,
+        "smooth-scrolling-threshold": 1,
+        "player-icons": {
+            "chromium": "",
+            "default": "",
+            "firefox": "",
+            "kdeconnect": "",
+            "mopidy": "",
+            "mpv": "󰐹",
             "spotify": "",
-            "default": "🎜"
+            "vlc": "󰕼"
         },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+        "status-icons": {
+            "paused": "󰐎",
+            "playing": "",
+            "stopped": ""
+        },
+        // "ignored-players": ["firefox"]
+        "max-length": 30
+    },
+
+    "custom/lock": {
+        "format": "",
+        "on-click": "hyprlock",
+        "tooltip": false
+    },
+    "custom/poweroff": {
+        "format": "",
+        "on-click": "systemctl poweroff",
+        "tooltip": false
     }
+    
 }
