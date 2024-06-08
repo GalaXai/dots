@@ -17,7 +17,9 @@ Optional Repo -> multi lib
 
 ## Removing wofi
 swap wofi to rofi since cattppucin has theme for it
-
+[!IMPORTANT] 
+sudo pacman -S rofi-wayland
+sudo pacman -R wofi
 # update pacman
 ```bash
 sudo pacman -Syu
@@ -32,8 +34,16 @@ root ALL=(ALL) NOPASSWD: ALL
 we have discord installed already
 ``` bash
 https://vencord.dev/download/
+
+paru -S xwaylandvideobridge # for share screen
+
+sudo pacman -S xdotool
+https://github.com/Rush/wayland-push-to-talk-fix
 ```
+
+
 ## Paru
+
 ```bash
 sudo pacman -S --needed base-devel
 git clone https://aur.archlinux.org/paru.git
@@ -79,6 +89,9 @@ sudo pacman -S qt6ct < to fix doplhin
 sudo pacman -S archlinux-xdg-menu < more fixes & run XDG_MENU_PREFIX=arch- kbuildsycoca6 
 env =  QT_QPA_PLATFORMTHEME,qt6ct
 
+change theme in qt6ct // curently #window theme loads slow idk why
+
+
 ## Audio
 We are using pulseaudio
 i saw `pavucontrol` in waybar config may use it as well.
@@ -92,3 +105,10 @@ sudo pacman -S gwenview
 
 ## lock screen
 sudo pacman -S hyprlock
+
+## fuck doplhin
+sudo pacman -S thunar gvfs
+sudo pacman -R dolphin
+
+sudo pacman -S nwg-look <- this fixes everything // test if fixes dolphin as well.
+paru -S catppuccin-gtk-theme-macchiatodiscord --enable-features=UseOzonePlatform --ozone-platform=wayland 

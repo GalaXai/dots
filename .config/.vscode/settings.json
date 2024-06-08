@@ -5,4 +5,12 @@
     "terminal.external.linuxExec": "kitty",
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.fontFamily": "JetBrains Mono",
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.colorCustomizations": {
+        "Default Dark": {
+          "titleBar.activeBackground": "#191919cc",
+          "titleBar.activeForeground":"#ffffff",
+        },
+      },
+      "window.titleBarStyle": "custom"
 }
