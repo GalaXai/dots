@@ -1,0 +1,77 @@
+{
+    "github.copilot.enable": {
+        "quarto": false,
+        "*": true
+    },
+    "settingsSync.ignoredExtensions": [
+        "anweber.vscode-httpyac",
+        "mshr-h.veriloghdl",
+        "alexcvzz.vscode-sqlite",
+        "ms-vscode-remote.remote-wsl",
+        "quarto.quarto",
+        "modular-mojotools.vscode-mojo",
+        "yzhang.markdown-all-in-one",
+        "shd101wyy.markdown-preview-enhanced",
+        "ms-azuretools.vscode-docker",
+        "d-biehl.robotcode"
+    ],
+    "explorer.confirmDelete": false,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "remote.SSH.remotePlatform": {
+        "192.168.0.165": "linux",
+        "192.168.0.164": "linux"
+    },
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "oneDarkPro.vivid": true,
+    "oneDarkPro.editorTheme": "One Dark Pro Darker",
+    "editor.tokenColorCustomizations": {
+
+        "[*Light*]": {
+            "textMateRules": [
+                {
+                    "scope": "ref.matchtext",
+                    "settings": {
+                        "foreground": "#000"
+                    }
+                }
+            ]
+        },
+        "[*Dark*]": {
+            "textMateRules": [
+                {
+                    "scope": "ref.matchtext",
+                    "settings": {
+                        "foreground": "#fff"
+                    }
+                },
+                {
+                    "scope": [
+                        "comment",
+                        "punctuation.definition.comment"
+                    ],
+                    "settings": {
+                        "foreground": "#98c379", // #50FA70,#79a802c6, #808C78, 00937D
+                    }
+                }
+            ]
+        }
+    },
+    "workbench.settings.applyToAllProfiles": [
+        "editor.fontVariations"
+    ],
+    "oneDarkPro.italic": false,
+    "markdown-preview-enhanced.previewTheme": "atom-dark.css",
+    "markdown-preview-enhanced.codeBlockTheme": "atom-dark.css",
+    "liveshare.notebooks.allowGuestExecuteCells": true,
+    "markdown-preview-enhanced.enablePreviewZenMode": true,
+    "markdown.extension.completion.enabled": true,
+    "markdown.extension.print.theme": "dark",
+    "markdown.extension.extraLangIds": [],
+    "github.copilot.editor.enableAutoCompletions": true,
+    "json.schemas": [],
+    "workbench.sideBar.location": "right"
+}
