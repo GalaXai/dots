@@ -7,7 +7,7 @@ sudo pacman -S git kitty
 archinstall 
 # ... minimal + multilib | install
 sudo pacman -Syu
-sudo pacman -S plasma-desktop sddm-kcm
+sudo pacman -S plasma-desktop sddm-kcm dolphin-plugins
 systemctl start sddm
 systemctl reboot
 ```
@@ -24,13 +24,17 @@ yay -S linutil
 # Finish config
 > This should be later moved to script since this will install a lot of packages
 ```bash
-sudo pacman -S ttf-0xproto-nerd stow flameshot 
-yay -S 
+sudo pacman -S ttf-0xproto-nerd stow flameshot discord gwenview ark
+yay -S zen-browser-bin
 ```
 
 ## Optional
 ```
-sudo pacman -S obs-studio
+### STUDIO
+sudo pacman -S obs-studio steam
+### PROGRAMINNG
+sudo pacman -S uv ruff go
+yay -S cursor-bin
 ```
 
 ## Apply dotfiles
