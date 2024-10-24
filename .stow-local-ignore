@@ -1,5 +1,4 @@
 .git
 .gitignore
-Arch_Installation.md
 README.md
-wofi_config.sh
+kde-shortcuts.kksrc
