@@ -24,8 +24,13 @@ yay -S linutil
 # Finish config
 > This should be later moved to script since this will install a lot of packages
 ```bash
-sudo pacman -S ttf-0xproto-nerd stow
+sudo pacman -S ttf-0xproto-nerd stow flameshot 
 yay -S 
+```
+
+## Optional
+```
+sudo pacman -S obs-studio
 ```
 
 ## Apply dotfiles
