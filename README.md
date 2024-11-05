@@ -24,8 +24,8 @@ yay -S linutil
 # Finish config
 > This should be later moved to script since this will install a lot of packages
 ```bash
-sudo pacman -S ttf-0xproto-nerd stow flameshot discord gwenview ark
-yay -S zen-browser-bin
+sudo pacman -S ttf-0xproto-nerd stow flameshot gwenview ark bash-completion
+yay -S zen-browser-bin vesktop
 ```
 
 ## Optional
