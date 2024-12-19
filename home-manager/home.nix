@@ -35,11 +35,9 @@
     tree
     wget
     stow
+    bash-completion
 
   ];
-   programs.bash ={
-    enable = true;
-   };
    programs.git = {
     enable = true;
     userName = "GalaxAI";
