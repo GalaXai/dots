@@ -6,7 +6,15 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-PS1='[\u@\h \W]\$ '
+RESET='\[\e[0m\]'
+USERNAME_COLOR='\[\e[38;5;114m\]'  # green from color2 #98c379
+AT_COLOR='\[\e[38;5;147m\]'       # white from color7 #dcdfe4
+HOST_COLOR='\[\e[38;5;75m\]'      # blue from color4 #61afef
+DIR_COLOR='\[\e[38;5;176m\]'      # magenta from color5 #c678dd
+
+
+PS1="[${USERNAME_COLOR}\u${AT_COLOR}@${HOST_COLOR}\h ${DIR_COLOR}\W${RESET}\$] "
+
 
 # Programming
 alias code='cursor'
