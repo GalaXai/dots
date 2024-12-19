@@ -24,7 +24,7 @@ home-manager switch --flake dotfiles/#$USER
 
 installin non nix-deps
 ```bash
-sudo pacman -S -needed - < arch-manager/desktop
+sudo pacman -S --needed $(grep -v '^#' arch-manager/desktop)
 yay -S --needed - < aur-manager/desktop
 ```
 
@@ -32,3 +32,6 @@ yay -S --needed - < aur-manager/desktop
 ## Further improvement
 reduce the number of pacman/aur packages and move them to nix
 
+Rice kde and save it using
+https://github.com/Prayag2/konsave
+and add konsave to dotfiles

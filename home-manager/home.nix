@@ -16,18 +16,26 @@
     #misc
     fastfetch
     discord-canary
+    
+    # KDE
+    gwenview
 
     #archives
+    ark
     zip
     unzip
     p7zip
     xz
 
     #utils
+    flameshot
+    nerd-fonts._0xproto
     fzf
     btop
     tree
     wget
+    stow
+
   ];
    programs.bash ={
     enable = true;
