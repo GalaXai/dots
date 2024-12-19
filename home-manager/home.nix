@@ -15,8 +15,6 @@
 
     #misc
     fastfetch
-    firefox
-    steam
     discord-canary
 
     #archives
