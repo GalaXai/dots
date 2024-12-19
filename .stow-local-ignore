@@ -2,3 +2,8 @@
 .gitignore
 README.md
 kde-shortcuts.kksrc
+flake.nix
+flake.lock
+
+arch-manager/
+aur-manager/
