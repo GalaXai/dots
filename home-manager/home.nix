@@ -3,6 +3,7 @@
 {
   imports = [ 
     ./programming/tools.nix
+    ./programming/python.nix
   ];
   
   nixpkgs.config.allowUnfree = true;
