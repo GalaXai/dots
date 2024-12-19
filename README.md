@@ -28,6 +28,11 @@ sudo pacman -S --needed $(grep -v '^#' arch-manager/desktop)
 yay -S --needed - < aur-manager/desktop
 ```
 
+## Stow files
+```bash
+stow --adopt --ignore='home-manager|arch-manager|aur-manager' .
+```
+
 
 ## Further improvement
 reduce the number of pacman/aur packages and move them to nix
