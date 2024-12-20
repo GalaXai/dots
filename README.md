@@ -7,7 +7,9 @@ Arch + kde plasma 6 and nix where possible
 archinstall
 # ... minimal + grub + multilib
 # This might be moved to home-manager with development of plasma-manager
-sudo pacman -S plasma-desktop sddm-kcm dolphin-plugins git kitty
+sudo pacman -S git kitty
+# kda specific
+sudo pacman -S plasma-desktop sddm-kcm dolphin-plugins kscreen
 systemctl enable sddm
 ```
 # HOW TO USE NIX

@@ -19,7 +19,9 @@
     
     # KDE
     gwenview
-
+    
+    #audio
+    pavucontrol
     #archives
     ark
     zip
