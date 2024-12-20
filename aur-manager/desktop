@@ -10,3 +10,4 @@ cursor-bin
 mesa
 lib32-mesa
 xf86-video-amdgpu
+# For more gaming related things just use linutil
