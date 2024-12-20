@@ -9,7 +9,7 @@ archinstall
 # This might be moved to home-manager with development of plasma-manager
 sudo pacman -S git kitty
 # kda specific
-sudo pacman -S plasma-desktop sddm-kcm dolphin-plugins kscreen
+sudo pacman -S plasma-desktop sddm-kcm dolphin-plugins kscreen plasma-pa
 systemctl enable sddm
 ```
 # HOW TO USE NIX

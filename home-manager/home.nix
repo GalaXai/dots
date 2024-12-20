@@ -21,7 +21,7 @@
     gwenview
     
     #audio
-    pavucontrol
+    # pavucontrol
     #archives
     ark
     zip
